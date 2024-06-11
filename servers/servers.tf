@@ -4,7 +4,7 @@ data "aws_ami" "centos" {
   name_regex = "centos machine"
 }
 
-output "aws_ami_address" {
+output "ami" {
 value = data.aws_ami.centos.image_id
 }
 
@@ -17,7 +17,7 @@ resource "aws_instance" "Frontend" {
   }
 }
 
-output "instance_ip_addr" {
+output "Frontend" {
   value = aws_instance.Frontend.public_ip
 }
 
