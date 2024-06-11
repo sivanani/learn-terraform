@@ -4,6 +4,9 @@ data "aws_ami" "centos" {
   name_regex = "centos machine"
 }
 
+output "centos" {
+  value = data.aws_ami.centos
+}
 resource "aws_instance" "Frontend" {
   ami  = "ami-0b4f379183e5706b9"
   instance_type = "t3.micro"
