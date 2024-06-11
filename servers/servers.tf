@@ -7,6 +7,10 @@ resource "aws_instance" "Frontend" {
   }
 }
 
+output "instance_ip_addr" {
+  value = aws_instance.Frontend.public_ip
+}
+
 resource "aws_instance" "MongoDB" {
   ami  = "ami-0b4f379183e5706b9"
   instance_type = "t3.micro"
