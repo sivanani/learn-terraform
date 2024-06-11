@@ -4,7 +4,7 @@ data "aws_ami" "centos" {
   name_regex = "centos machine"
 }
 
-output "ami" {
+output "centos" {
 value = data.aws_ami.centos.image_id
 }
 
