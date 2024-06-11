@@ -11,15 +11,15 @@ output "Frontend" {
   value = aws_instance.Frontend.public_ip
 }
 
-data "aws_ami" "centos" {
-  owners = [ "973714476881" ]
-  most_recent = true
-  name_regex = "centos machine"
-}
+# data "aws_ami" "centos" {
+#   owners = [ "973714476881" ]
+#   most_recent = true
+#   name_regex = "centos machine"
+# }
 
-output "centos" {
-  value = data.aws_ami.centos.image_id
-}
+# output "centos" {
+#   value = data.aws_ami.centos.image_id
+# }
 
 resource "aws_instance" "MongoDB" {
   ami  = "ami-0b4f379183e5706b9"
