@@ -1,6 +1,9 @@
+variable "instance" {
+  default = "t3.micro"
+}
 resource "aws_instance" "Frontend" {
   ami  = "ami-0b4f379183e5706b9"
-  instance_type = "t3.micro"
+  instance_type = var.instance
 
   tags = {
     Name = "Frontend"
